@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Gunner_frames.tres" type="SpriteFrames" id=1]
+
+[node name="Gunner" type="AnimatedSprite3D"]
+flip_h = true
+billboard = 1
+frames = ExtResource( 1 )
+animation = "walk_away"
+frame = 5
+playing = true
