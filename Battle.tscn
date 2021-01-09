@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://grid_material_green.tres" type="Material" id=1]
 [ext_resource path="res://addons/waterways/river_manager.gd" type="Script" id=2]
 [ext_resource path="res://addons/waterways/textures/water1.png" type="Texture" id=3]
 [ext_resource path="res://grid_material_brown.tres" type="Material" id=4]
+[ext_resource path="res://Gunner.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve3D" id=2]
 bake_interval = 0.05
@@ -64,7 +65,7 @@ material = ExtResource( 4 )
 
 [node name="River" type="Spatial" parent="."]
 script = ExtResource( 2 )
-shape_step_length_divs = 1
+shape_step_length_divs = 2
 shape_step_width_divs = 1
 shape_smoothness = 1.29
 mat_texture = ExtResource( 3 )
@@ -84,8 +85,8 @@ mat_flow_pressure_strength = 1.0
 mat_flow_max_strength = 3.101
 mat_foam_albedo = Color( 0.9, 0.9, 0.9, 1 )
 mat_foam_amount = 2.0
-mat_foam_steepness = 2.539
-mat_foam_smoothness = 0.3
+mat_foam_steepness = 2.777
+mat_foam_smoothness = 0.181
 lod_lod0_distance = 50.0
 baking_resolution = 2
 baking_raycast_distance = 10.0
@@ -103,10 +104,13 @@ _dist_pressure = SubResource( 6 )
 valid_flowmap = false
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.73038, -0.25, 0.635646, 0.006236, 0.933013, 0.359789, -0.683013, -0.258819, 0.683013, 4, 1, 4 )
+transform = Transform( 0.703879, -0.482963, 0.520866, 0.0116365, 0.741026, 0.671376, -0.710225, -0.466506, 0.527212, 4, 3, 4 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
 light_energy = 10.29
 omni_range = 8.2
 omni_attenuation = 0.466517
+
+[node name="Gunner" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 2 )
